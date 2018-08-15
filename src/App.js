@@ -1,48 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch ,Link } from 'react-router-dom';
-import FindGiphy from './components/FindGiphy'
-import RandomGiphy from './components/RandomGiphy'
+import { Route, Switch } from 'react-router-dom';
+import MainPage from './pages/MainPage'
+import RandomPage from './pages/RandomPage'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
-const Header = ()=> {
-  return(
-    <React.Fragment>
-      <header>
-          <nav>
-            <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/random'>Random</Link></li>
-            </ul>
-          </nav>
-        </header>
-    </React.Fragment>
-  )
-}
+
 
 const Main = ()=> {
   return(
     <React.Fragment>
       <main>
         <Switch>
-          <Route exact path='/' component={FindGiphy}/>
-          <Route path='/random' component={RandomGiphy}/>
+          <Route exact path='/' component={MainPage}/>
+          <Route path='/random' component={RandomPage}/>
         </Switch>
       </main>
     </React.Fragment>
   )
 }
 
-const Footer = () => {
-  return(
-    <React.Fragment>
-      <footer>
-        <p>Posted by: Alex Kurylionak</p>
-        <p>Contact information: <a href="mailto:akurylionak@exadel.com">
-        akurylionak@exadel.com</a>.</p>
-      </footer>
-    </React.Fragment>
-  )
-}
+
 
 class App extends Component {
   render() {
